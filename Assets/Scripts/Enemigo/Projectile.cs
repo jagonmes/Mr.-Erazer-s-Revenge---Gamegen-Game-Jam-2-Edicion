@@ -5,23 +5,24 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float speed;
-
+    public float tiempoTotal;
     private Transform player;
     private Vector2 target;
-
+    private float contador;
     void Start(){
-
         player = GameObject.FindGameObjectWithTag("Player").transform;
-
+        contador = 1;
         target = new Vector2(player.position.x, player.position.y);
 
     }
 
     void Update(){
 
-        transform.position = Vector2.MoveTowards(transform.position , target, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position , player.position , speed * Time.deltaTime);
+        
 
-        if(transform.position.x == target.x && transform.position.y == target.y){
+
+        if(contador > tiempoTotal){
             DestroyProjectile();
         }
     }

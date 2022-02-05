@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
 
     public Transform player;
     public Transform puntero;
+    public Transform flipValidator;
     public GameObject projectile;
     void Start()
     {
@@ -25,6 +26,9 @@ public class Enemy : MonoBehaviour
     
     void Update()
     {  
+        if( Vector2.Distance(puntero.position, player.position) > Vector2.Distance(flipValidator.position, player.position)){
+            transform.Rotate(0f,180f,0f);
+        }
         if( Vector2.Distance(transform.position, player.position)> retreatDistance){
            transform.position = this.transform.position;
         }else if(Vector2.Distance(transform.position, player.position)< retreatDistance){
