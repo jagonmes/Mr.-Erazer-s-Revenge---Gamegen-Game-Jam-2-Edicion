@@ -15,8 +15,11 @@ public class PlayerMovement : MonoBehaviour
     //PRIVATE FLOATS
     private float dirX;
 
+    private bool canMove = true;
+    private bool canJump = true;
+
     //PUBLIC FLOATS
-    public float jumpForce = 14.0f;
+    public float jumpForce = 15.0f;
     public float moveSpeed = 7.0f;
 
     //MOVEMENT STATE ENUM
@@ -43,14 +46,17 @@ public class PlayerMovement : MonoBehaviour
     }
 
     //CHECK INPUT
-    private void CheckInput() 
+    private void CheckInput()
     {
         //X AXIS DIRECTION AND RUNNING ANIMATION
         dirX = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        if (canMove)
+        {
+            rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        }
 
         //JUMP
-        if (Input.GetButtonDown("Jump")) 
+        if (Input.GetButtonDown("Jump"))
         {
             CheckIfCanJump();
         }
@@ -59,27 +65,27 @@ public class PlayerMovement : MonoBehaviour
     //JUMP
     private void CheckIfCanJump()
     {
-        if (IsGrounded())
+        if (IsGrounded() && canJump)
         {
             Jump();
         }
     }
 
-    private void Jump() 
+    private void Jump()
     {
         jumpSoundEffect.Play();
         rb.velocity = new Vector2(rb.velocity.x, jumpForce);
     }
 
     //UPDATE ANIMATION
-    private void UpdateAnimation() 
+    private void UpdateAnimation()
     {
         //Comprueba si esta corriendo
-        if (dirX > 0)
+        if (dirX > 0 && canMove)
         {
             state = MovementState.running;
         }
-        else if (dirX < 0)
+        else if (dirX < 0 && canMove)
         {
             state = MovementState.running;
         }
@@ -89,10 +95,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Comprueba si esta saltando o callendo
-        if (rb.velocity.y > 0.1f) 
+        if (rb.velocity.y > 0.1f)
         {
             state = MovementState.jumping;
-        }else if (rb.velocity.y < -0.1f) 
+        }
+        else if (rb.velocity.y < -0.1f)
         {
             state = MovementState.fallling;
         }
@@ -118,8 +125,20 @@ public class PlayerMovement : MonoBehaviour
     }
 
     //IS GROUNDED
-    private bool IsGrounded() 
+    private bool IsGrounded()
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
+    }
+
+    //TOGGLE MOVEMENT
+    public void CanMoveToggle()
+    {
+        canMove = !canMove;
+    }
+
+    //TOGGLE MOVEMENT
+    public void CanJumpToggle()
+    {
+        canJump = !canJump;
     }
 }
