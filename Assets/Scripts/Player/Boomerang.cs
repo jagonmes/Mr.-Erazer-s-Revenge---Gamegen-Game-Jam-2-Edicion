@@ -9,7 +9,8 @@ public class Boomerang : MonoBehaviour
    
    public Rigidbody2D rb;
 
-   private float contador;
+   public float contador;
+   private float activoContador;
    public float tiempoVolver;
 
    private Vector2 moveDirection;
@@ -20,7 +21,7 @@ public class Boomerang : MonoBehaviour
 
 
    void Start(){
-       contador = 0;
+       activoContador = contador;
        rb = GetComponent<Rigidbody2D>();
        player = GameObject.FindGameObjectWithTag("Player").transform;
        moveDirection = new Vector2(speed, 0);
@@ -28,16 +29,16 @@ public class Boomerang : MonoBehaviour
        Destroy(gameObject,tiempoBala);
    }
    void Update(){
-       if (contador == tiempoVolver){
+       if (activoContador == 0){
           Retroceso();
-          contador = 0;
+          activoContador = contador;
        }else{
-       contador += 1 * Time.deltaTime;
+          activoContador--;
        }
    }
    void Retroceso(){
        //returnMoveDirection = new Vector2((player.position.x - rb.position.x), (player.position.x - rb.position.x)).normalized;
-       moveDirection = new Vector2(-speed, 0);
+       moveDirection = new Vector2(-speed*2,0 ).normalized;
        rb.velocity = new Vector2(returnMoveDirection.x*speed, returnMoveDirection.y*speed);
    }
    
