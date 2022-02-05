@@ -95,11 +95,11 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Comprueba si esta saltando o callendo
-        if (rb.velocity.y > 0.1f)
+        if (rb.velocity.y > 0.1f && !IsGrounded())
         {
             state = MovementState.jumping;
         }
-        else if (rb.velocity.y < -0.1f)
+        else if (rb.velocity.y < -0.1f && !IsGrounded())
         {
             state = MovementState.fallling;
         }

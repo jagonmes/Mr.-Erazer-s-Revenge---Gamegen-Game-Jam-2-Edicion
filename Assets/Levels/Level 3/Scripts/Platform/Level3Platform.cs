@@ -42,9 +42,10 @@ public class Level3Platform : MonoBehaviour
                 {
                     start = false;
                     end = true;
+                    currentWaypointIndex = 0;
                 }
             }
-
+            
             transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, Time.deltaTime * speed);
         }
     }
