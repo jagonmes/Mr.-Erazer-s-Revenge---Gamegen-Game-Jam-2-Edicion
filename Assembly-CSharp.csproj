@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{35223D1A-0ABA-3E00-D682-2F913F0EB5DC}</ProjectGuid>
+    <ProjectGuid>{D4645EDE-A81C-443B-6B64-9D0E6AE7BC03}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -56,11 +56,11 @@
     <Compile Include="Assets\Scripts\Others\Waypoint_Follower.cs" />
     <Compile Include="Assets\Scripts\Others\Rotate.cs" />
     <Compile Include="Assets\Scripts\Player\ItemCollector.cs" />
-    <Compile Include="Assets\Scripts\Others\Finish.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerLife.cs" />
     <Compile Include="Assets\Scripts\Others\StickyPlatform.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Others\Finish.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\CasualGameBGM05\ReadMe.txt" />
