@@ -113,10 +113,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c79126b63b8b824ea310d61e960eff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 7
   tiempoBala: 2
   rb: {fileID: -6308566734847495763}
-  tiempo: 10
 --- !u!50 &-6308566734847495763
 Rigidbody2D:
   serializedVersion: 4
@@ -137,4 +136,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4

@@ -1,25 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ProFisica: MonoBehaviour
 {
    public float speed;
    public float tiempoBala;
+   private PlayerLife Sc;
 
    public Rigidbody2D rb;
-
-   public float tiempo;
-   private float contador;
 
    private Vector2 moveDirection;
 
    private Transform player;
-
+   private PlayerLife pl;
 
 
    void Start(){
-       contador = 0;
+       Sc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLife>();
+       rb = GetComponent<Rigidbody2D>();
        player = GameObject.FindGameObjectWithTag("Player").transform;
        moveDirection = new Vector2((player.position.x - rb.position.x), (player.position.y - rb.position.y)).normalized;
        rb.velocity = new Vector2(moveDirection.x*speed, moveDirection.y*speed);
@@ -27,7 +27,8 @@ public class ProFisica: MonoBehaviour
    }
    void OnTriggerEnter2D(Collider2D other){
         if(other.CompareTag("Player")){
+            Sc.Die();
             Destroy(gameObject);
         }
-}
+    }
 }

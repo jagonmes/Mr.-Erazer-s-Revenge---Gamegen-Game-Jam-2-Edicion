@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2680928814162982152}
   - component: {fileID: 2680928814162982165}
   - component: {fileID: 2680928814162982164}
+  - component: {fileID: 2570926611297638330}
   - component: {fileID: 2680928814162982167}
   - component: {fileID: 2680928814162982166}
   - component: {fileID: 2680928814162982161}
@@ -157,6 +158,25 @@ MonoBehaviour:
   jumpForce: 14
   moveSpeed: 7
   jumpSoundEffect: {fileID: 2680928814162982160}
+--- !u!114 &2570926611297638330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2680928814162982153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0140e188eaf94314dbbde82a2a37e498, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  startTimeBtwShots: 2
+  puntero: {fileID: 1649757031546690873}
+  projectile: {fileID: 8539875330318667594, guid: e25f2f5a1745c2743a0c0b56748c0b33, type: 3}
+  enemies:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!95 &2680928814162982167
 Animator:
   serializedVersion: 3
@@ -515,7 +535,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8484603338437592230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.778, y: -0.591, z: 0}
+  m_LocalPosition: {x: 0.722, y: -0.596, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2680928814162982154}
