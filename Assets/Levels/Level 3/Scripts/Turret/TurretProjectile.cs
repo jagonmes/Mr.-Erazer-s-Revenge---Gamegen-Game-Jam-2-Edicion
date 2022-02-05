@@ -21,7 +21,7 @@ public class TurretProjectile : MonoBehaviour
         Sc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLife>();
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        moveDirection = new Vector2((0 - rb.position.x), 0).normalized;
+        moveDirection = new Vector2((player.position.x - rb.position.x), 0).normalized;
         rb.velocity = new Vector2(moveDirection.x * speed, moveDirection.y * speed);
         Destroy(gameObject, tiempoBala);
     }
