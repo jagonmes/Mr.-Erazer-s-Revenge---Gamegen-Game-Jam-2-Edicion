@@ -16,9 +16,13 @@ public class Disparar : MonoBehaviour
     // Start is called before the first frame update
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) && timeBtwShots <=0)
         {
             Shot();
+            timeBtwShots = startTimeBtwShots;
+        }
+        if(timeBtwShots > 0){
+            timeBtwShots -= Time.deltaTime;
         }
     }
 
