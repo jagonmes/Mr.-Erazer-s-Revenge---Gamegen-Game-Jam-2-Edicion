@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1184626128934133666}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FlipValidador
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 1184626129458953743}
   - component: {fileID: 1184626129458953740}
   - component: {fileID: 1184626129458953731}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Archer
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1184626130651859060}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Puntero
   m_TagString: Untagged
   m_Icon: {fileID: 0}

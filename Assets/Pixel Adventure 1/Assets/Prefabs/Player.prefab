@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: -1701259579638710764}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   startTimeBtwShots: 2
-  pb: {fileID: 0}
+  pb: {fileID: 2680928814162982164}
   puntero: {fileID: 1649757031546690873}
   projectile: {fileID: 8539875330318667594, guid: e25f2f5a1745c2743a0c0b56748c0b33, type: 3}
   enemies:
@@ -593,7 +593,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8484603338437592230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.79, y: -0.596, z: 0}
+  m_LocalPosition: {x: 1.44, y: 0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2680928814162982154}
