@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3478703824462914251}
   - component: {fileID: 6526556695063641321}
   - component: {fileID: -6308566734847495763}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Projectile
   m_TagString: Trap
   m_Icon: {fileID: 0}
