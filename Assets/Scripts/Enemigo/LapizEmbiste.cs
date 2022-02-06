@@ -35,7 +35,7 @@ public class LapizEmbiste : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        vision1 = rb.position;
+        vision1 = new Vector2(rb.position.x, rb.position.y - 2);
         vision2 = vision1 + new Vector2(dirX*7, 0.3f);
 
         

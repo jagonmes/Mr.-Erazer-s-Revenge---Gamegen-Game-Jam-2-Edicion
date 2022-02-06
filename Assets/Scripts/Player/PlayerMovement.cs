@@ -80,35 +80,40 @@ public class PlayerMovement : MonoBehaviour
     //UPDATE ANIMATION
     private void UpdateAnimation()
     {
-        //Comprueba si esta corriendo
-        if (dirX > 0 && canMove)
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("AttackLvL2"))
         {
-            state = MovementState.running;
-        }
-        else if (dirX < 0 && canMove)
-        {
-            state = MovementState.running;
-        }
-        else
-        {
-            state = MovementState.idle;
-        }
 
-        //Comprueba si esta saltando o callendo
-        if (rb.velocity.y > 0.1f && !IsGrounded())
-        {
-            state = MovementState.jumping;
-        }
-        else if (rb.velocity.y < -0.1f && !IsGrounded())
-        {
-            state = MovementState.fallling;
-        }
+            //Comprueba si esta corriendo
+            if (dirX > 0 && canMove)
+            {
+                state = MovementState.running;
+            }
+            else if (dirX < 0 && canMove)
+            {
+                state = MovementState.running;
+            }
+            else
+            {
+                state = MovementState.idle;
+            }
 
-        //Aplica la animación correspondiente
-        anim.SetInteger("state", (int)state);
+            //Comprueba si esta saltando o callendo
+            if (rb.velocity.y > 0.1f && !IsGrounded())
+            {
+                state = MovementState.jumping;
+            }
+            else if (rb.velocity.y < -0.1f && !IsGrounded())
+            {
+                state = MovementState.fallling;
+            }
 
-        //Gira el personaje en la dirección correcta
-        FlipSprite();
+            //Aplica la animación correspondiente
+            anim.SetInteger("state", (int)state);
+
+            //Gira el personaje en la dirección correcta
+            FlipSprite();
+
+        }
     }
 
     //FLIP SPRITE

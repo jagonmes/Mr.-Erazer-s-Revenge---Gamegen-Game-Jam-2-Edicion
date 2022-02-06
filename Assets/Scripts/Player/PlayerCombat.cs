@@ -5,8 +5,9 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
 
+    
     public Transform attackPoint;
-    //public Transform attackPoint2;
+    public Rigidbody2D rb;
     public Animator animator;
 
     [SerializeField] private PlayerMovement pb;
@@ -16,6 +17,8 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask projectiles;
     public float dir0 = 1;
 
+    public float counter = 0;
+
     // Update is called once per frame
     void Update()
     {
@@ -24,9 +27,20 @@ public class PlayerCombat : MonoBehaviour
             dir0 = pb.GetDirX();
             attackPoint.transform.position = new Vector2(this.transform.position.x + dir0, this.transform.position.y);
         }
-        if (Input.GetKeyDown(KeyCode.J))
+        if (counter <= 0)
         {
-            Attack();
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                if (!animator.GetCurrentAnimatorStateInfo(0).IsName("AttackLvL2"))
+                {
+                    Attack();
+                }
+                
+            }
+        }
+        else
+        {
+            counter--;
         }
         if (Input.GetKey(KeyCode.K))
         {
@@ -36,8 +50,12 @@ public class PlayerCombat : MonoBehaviour
 
     void Attack()
     {
+        animator.SetBool("attacking", true);
+        
+        counter = 60;
         Collider2D [] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemies);
         Debug.Log("ATTAAAAQUEEE");
+
         foreach(Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<LapizEmbiste>().movementSpeed = 0;
@@ -64,5 +82,10 @@ public class PlayerCombat : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(attackPoint.position, attackRange );
+    }
+
+    public void StopAttack()
+    {
+        animator.SetBool("attacking", false);
     }
 }
