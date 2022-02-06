@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask jumpableGround;
 
     //PRIVATE FLOATS
-    private float dirX;
+    public static float dirX;
 
     private bool canMove = true;
     private bool canJump = true;
@@ -140,5 +140,10 @@ public class PlayerMovement : MonoBehaviour
     public void CanJumpToggle()
     {
         canJump = !canJump;
+    }
+
+    public float GetDirX()
+    {
+        return dirX;
     }
 }

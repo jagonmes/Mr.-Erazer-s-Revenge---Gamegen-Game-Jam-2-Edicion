@@ -5,14 +5,24 @@ using UnityEngine;
 public class LapizEmbiste : MonoBehaviour
 {
     public bool mustPatrol;
+    public bool attacking = false;
 
     public float movementSpeed = 5;
     public int maxSteps = 100;
     public int steps = 0;
+    public bool stunned = false;
 
-    private Rigidbody2D rb;
+    private int counter;
+    public int dirX = 1;
+
+    public Rigidbody2D rb;
     public Transform transform;
     public BoxCollider2D collider;
+
+    public LayerMask playerLayer;
+
+    public Vector2 vision1;
+    public Vector2 vision2;
 
     void Start()
     {
@@ -25,10 +35,36 @@ public class LapizEmbiste : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (mustPatrol)
+        vision1 = rb.position;
+        vision2 = vision1 + new Vector2(dirX*7, 0.3f);
+
+        
+
+        if (!stunned)
         {
-            Patrol();
+            if (mustPatrol)
+            {
+                Patrol();
+            }
+
+            Collider2D player = Physics2D.OverlapArea(vision1, vision2, playerLayer);
+            if (player == true)
+            {
+                Attack();
+            }
         }
+
+        if (counter > 0)
+        {
+            counter--;
+            rb.velocity = new Vector2(0, 0);
+        }
+        else if (counter == 0)
+        {
+            stunned = false;
+            counter = -1;
+        }
+
     }
 
     void Patrol()
@@ -48,13 +84,15 @@ public class LapizEmbiste : MonoBehaviour
         mustPatrol = false;
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
         movementSpeed *= -1;
+        dirX *= -1;
         mustPatrol = true;
         steps = 0;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        Collider2D player = Physics2D.OverlapArea(vision1, vision2, playerLayer);
+        if (player == true)
         {
             Attack();
         }
@@ -62,6 +100,21 @@ public class LapizEmbiste : MonoBehaviour
 
     void Attack()
     {
-        movementSpeed *= 3;
+        if (attacking == false) {
+            movementSpeed *= 2;
+            maxSteps = 100000;
+        }
+        attacking = true;
+    }
+
+    public void Blocked()
+    {
+        stunned = true;
+        counter = 80;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawLine(vision1, vision2);
     }
 }
