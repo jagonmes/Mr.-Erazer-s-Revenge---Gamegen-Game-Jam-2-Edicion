@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
-
+    public bool canAttack;
+    public bool canBlock;
     
     public Transform attackPoint;
     public Rigidbody2D rb;
@@ -31,9 +32,12 @@ public class PlayerCombat : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.J))
             {
-                if (!animator.GetCurrentAnimatorStateInfo(0).IsName("AttackLvL2"))
+                if (canAttack)
                 {
-                    Attack();
+                    if (!animator.GetCurrentAnimatorStateInfo(0).IsName("AttackLvL2"))
+                    {
+                        Attack();
+                    }
                 }
                 
             }
@@ -44,7 +48,10 @@ public class PlayerCombat : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.K))
         {
-            Block();
+            if (canBlock)
+            {
+                Block();
+            }
         }
     }
 
