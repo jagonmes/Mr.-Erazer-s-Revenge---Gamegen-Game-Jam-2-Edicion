@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  tiempoBala: 2
+  tiempoBala: 4
   rb: {fileID: -6308566734847495763}
 --- !u!50 &-6308566734847495763
 Rigidbody2D:
