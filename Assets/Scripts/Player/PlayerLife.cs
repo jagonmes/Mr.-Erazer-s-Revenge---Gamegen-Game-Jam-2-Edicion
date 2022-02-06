@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
-
+    private bool dead = false;
     private Rigidbody2D rb;
     private Animator anim;
 
@@ -19,7 +19,7 @@ public class PlayerLife : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Trap") || collision.gameObject.CompareTag("Enemy")) 
+        if (collision.gameObject.CompareTag("Trap") || collision.gameObject.CompareTag("Enemy"))
         {
             Die();
         }
@@ -27,9 +27,13 @@ public class PlayerLife : MonoBehaviour
 
     public void Die() 
     {
-        rb.bodyType = RigidbodyType2D.Static;
-        anim.SetTrigger("death");
-        deathSoundEffect.Play();
+        if (!dead)
+        {
+            rb.bodyType = RigidbodyType2D.Static;
+            anim.SetTrigger("death");
+            dead = true;
+            deathSoundEffect.Play();
+        }
     }
 
     private void RestartLevel() 

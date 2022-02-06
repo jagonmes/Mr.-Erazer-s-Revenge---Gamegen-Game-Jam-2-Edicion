@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -4079141719101210252}
   - component: {fileID: 3647587875467226643}
   - component: {fileID: -5323260245125243943}
+  - component: {fileID: 3153785020098477376}
   m_Layer: 0
   m_Name: Boomer
   m_TagString: Untagged
@@ -71,10 +72,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1565941497
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 82d529add9feed94d9e4bf7f4eb4505a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,7 +101,7 @@ MonoBehaviour:
   speed: 15
   tiempoBala: 5
   rb: {fileID: 3647587875467226643}
-  contador: 40
+  contador: 80
   tiempoVolver: 2
   disparar: {fileID: 2570926611297638330, guid: 0ba1cd25a6da3c4439d879dad5da5e6d, type: 3}
 --- !u!50 &3647587875467226643
@@ -140,3 +141,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &3153785020098477376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8539875330318667594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a10fb0142b8a2d49ab502c7627fc96c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
