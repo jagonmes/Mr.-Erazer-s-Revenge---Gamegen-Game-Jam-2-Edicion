@@ -97,12 +97,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edd27d6dad5539549bcafd0d777b1e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 3
   tiempoBala: 5
   rb: {fileID: 3647587875467226643}
-  contador: 40
+  contador: 80
   tiempoVolver: 2
-  disparar: {fileID: 2570926611297638330, guid: 0ba1cd25a6da3c4439d879dad5da5e6d, type: 3}
 --- !u!50 &3647587875467226643
 Rigidbody2D:
   serializedVersion: 4

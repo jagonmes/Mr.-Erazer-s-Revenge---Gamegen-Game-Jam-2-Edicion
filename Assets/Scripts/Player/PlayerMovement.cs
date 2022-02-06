@@ -15,8 +15,8 @@ public class PlayerMovement : MonoBehaviour
     //PRIVATE FLOATS
     public static float dirX;
 
-    public bool canMove = true;
-    public bool canJump = true;
+    private bool canMove = true;
+    private bool canJump = true;
 
     //PUBLIC FLOATS
     public float jumpForce = 15.0f;

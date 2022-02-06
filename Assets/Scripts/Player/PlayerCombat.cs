@@ -41,7 +41,7 @@ public class PlayerCombat : MonoBehaviour
         foreach(Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<LapizEmbiste>().movementSpeed = 0;
-            Destroy(enemy.gameObject);
+            enemy.enabled = false;
         }
     }
 
@@ -57,7 +57,7 @@ public class PlayerCombat : MonoBehaviour
         }
         foreach (Collider2D projectile in blockedProjectiles)
         {
-            Destroy(projectile.gameObject);
+            Destroy(projectile);
         }
     }
 
