@@ -176,7 +176,7 @@ MonoBehaviour:
   projectile: {fileID: 8539875330318667594, guid: e25f2f5a1745c2743a0c0b56748c0b33, type: 3}
   enemies:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 768
 --- !u!95 &2680928814162982167
 Animator:
   serializedVersion: 3
