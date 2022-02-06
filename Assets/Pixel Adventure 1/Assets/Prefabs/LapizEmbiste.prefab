@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5290324695005145031}
   - component: {fileID: 5290324695005145030}
   - component: {fileID: 5290324695005145033}
-  - component: {fileID: 5290324695005145028}
+  - component: {fileID: 8878864368297228106}
   m_Layer: 8
   m_Name: LapizEmbiste
   m_TagString: Trap
@@ -137,7 +137,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3074136, y: 2}
   m_EdgeRadius: 0
---- !u!114 &5290324695005145028
+--- !u!114 &8878864368297228106
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,7 +156,7 @@ MonoBehaviour:
   steps: 0
   stunned: 0
   dirX: 1
-  rb: {fileID: 0}
+  rb: {fileID: 5290324695005145030}
   transform: {fileID: 5290324695005145029}
   collider: {fileID: 5290324695005145033}
   playerLayer:
