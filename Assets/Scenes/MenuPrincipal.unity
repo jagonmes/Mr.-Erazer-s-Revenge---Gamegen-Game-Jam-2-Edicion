@@ -855,7 +855,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15, y: -40}
+  m_AnchoredPosition: {x: 1.4, y: -24.9}
   m_SizeDelta: {x: 483.2691, y: 397.5573}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1482893949
@@ -972,7 +972,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Comezar juegaci\xF3n"
+  m_Text: "Comenzar juegaci\xF3n"
 --- !u!222 &2140683732
 CanvasRenderer:
   m_ObjectHideFlags: 0
