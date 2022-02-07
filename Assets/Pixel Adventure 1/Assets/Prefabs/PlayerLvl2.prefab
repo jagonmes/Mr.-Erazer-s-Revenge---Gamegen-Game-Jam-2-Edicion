@@ -87,6 +87,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 2.4
       objectReference: {fileID: 0}
+    - target: {fileID: 2680928814162982167, guid: 0ba1cd25a6da3c4439d879dad5da5e6d, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3a6a652fd21a85c4892408b3a6d1da44, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ba1cd25a6da3c4439d879dad5da5e6d, type: 3}
 --- !u!1 &167305170403478856 stripped
@@ -94,7 +98,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2680928814162982153, guid: 0ba1cd25a6da3c4439d879dad5da5e6d, type: 3}
   m_PrefabInstance: {fileID: 2839222318536292417}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &8758246617142690585
+--- !u!82 &5284194032022111332
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,8 +108,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8c51997d2d710d54aabdce18bc08e3c6, type: 3}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -190,7 +194,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!82 &5284194032022111332
+--- !u!82 &8758246617142690585
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -200,8 +204,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 8c51997d2d710d54aabdce18bc08e3c6, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
