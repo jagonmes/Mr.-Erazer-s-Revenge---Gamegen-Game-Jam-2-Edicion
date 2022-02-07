@@ -13,25 +13,29 @@ public class BGSwapLvl2 : MonoBehaviour
 
     // Update is called once per frame
 
-    private void Start()
+    void Start()
     {
         BG1.gameObject.SetActive(true);
         BG2.gameObject.SetActive(false);
         BG3.gameObject.SetActive(false);
     }
 
-    private void Update()
+    void Update()
     {
         if (player.position.y < -18 && player.position.y > -60)
         {
             BG1.gameObject.SetActive(false);
             BG2.gameObject.SetActive(true);
+            
         }
         else if (player.position.y < -60)
         {
+            
             BG2.gameObject.SetActive(false);
             BG3.gameObject.SetActive(true);
+            
         }
+
     }
 
 
