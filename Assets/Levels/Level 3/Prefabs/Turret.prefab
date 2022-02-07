@@ -40,9 +40,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1184626129458953741}
   - component: {fileID: 1184626129458953742}
-  - component: {fileID: 1184626129458953743}
   - component: {fileID: 1184626129458953740}
   - component: {fileID: 1184626129458953731}
+  - component: {fileID: 2428174133148861057}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Enemy
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1184626129458953736}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -117,27 +117,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1184626129458953743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1184626129458953736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20d73382ba81bea40bbd536c89a46b17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  retreatDistance: 0
-  shotingDistance: 70
-  detectionDistance: 70
-  startTimeBtwShots: 2
-  player: {fileID: 0}
-  puntero: {fileID: 1184626130651859060}
-  flipValidator: {fileID: 1184626128934133666}
-  projectile: {fileID: 49851235970702180, guid: 21e26f86d0e35cf41aabb156ce916eb2, type: 3}
 --- !u!50 &1184626129458953740
 Rigidbody2D:
   serializedVersion: 4
@@ -185,6 +164,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2428174133148861057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184626129458953736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7eab1ba93341c0488d0a93989953aab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  retreatDistance: 0
+  shotingDistance: 70
+  detectionDistance: 70
+  startTimeBtwShots: 2
+  player: {fileID: 7533909107355883759, guid: 9b0a965d005b07c41b3e9b02a2f25762, type: 3}
+  puntero: {fileID: 1184626130651859060}
+  projectile: {fileID: 49851235970702180, guid: 21e26f86d0e35cf41aabb156ce916eb2, type: 3}
 --- !u!1 &1184626130651859061
 GameObject:
   m_ObjectHideFlags: 0
