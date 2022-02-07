@@ -13,6 +13,7 @@ public class PlayerCombat : MonoBehaviour
     public AudioSource swordSound;
 
     [SerializeField] private PlayerMovement pb;
+    [SerializeField] private Disparar disparar;
 
     public float attackRange = 1f;
     public LayerMask enemies;
@@ -57,6 +58,8 @@ public class PlayerCombat : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.K))
         {
+            disparar.canShoot = true;
+            pb.canMove = true;
             canAttack = true;
             animator.SetBool("blocking", false);
         }
@@ -85,6 +88,10 @@ public class PlayerCombat : MonoBehaviour
 
         animator.SetBool("blocking", true);
         canAttack = false;
+        pb.canMove = false;
+        disparar.canShoot = false;
+
+        rb.velocity = new Vector2(0, rb.velocity.y);
 
         Collider2D[] blockedEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemies);
         Collider2D[] blockedProjectiles = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, projectiles);

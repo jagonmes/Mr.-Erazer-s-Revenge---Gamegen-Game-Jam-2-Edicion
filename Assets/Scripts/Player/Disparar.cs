@@ -11,6 +11,8 @@ public class Disparar : MonoBehaviour
     [SerializeField] private PlayerMovement pb;
     private float dir0 = 1;
 
+    public bool canShoot = true;
+
     public Animator animator;
     
     public AudioSource shotSound;
@@ -25,9 +27,9 @@ public class Disparar : MonoBehaviour
            dir0 = pb.GetDirX();
            puntero.transform.position = new Vector2(this.transform.position.x + dir0*2, this.transform.position.y);
         }
-        if (Input.GetKeyDown(KeyCode.P) && timeBtwShots <=0)
+        if (Input.GetKeyDown(KeyCode.P) && timeBtwShots <=0 && canShoot)
         {
-            animator.SetBool("throw", true);
+            animator.SetTrigger("throw");
             Shot();
             timeBtwShots = startTimeBtwShots;
         }
@@ -43,8 +45,4 @@ public class Disparar : MonoBehaviour
         Instantiate(projectile, puntero.position, Quaternion.identity );
     }
 
-    public void stopThrow()
-    {
-        animator.SetBool("throw", false);
-    }
 }
