@@ -14,21 +14,30 @@ public class Enemy : MonoBehaviour
 
     public Transform player;
     public Transform puntero;
-    public Transform flipValidator;
+    public Transform flipValidator1;
+    public Transform flipValidator2;
     public GameObject projectile;
+    public AudioSource disparo;
+    
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-
         timeBtwShots = startTimeBtwShots;
     }
 
     
     void Update()
     {  
-        if( Vector2.Distance(puntero.position, player.position) > Vector2.Distance(flipValidator.position, player.position)){
-            transform.Rotate(0f,180f,0f);
-        }
+       if( Vector2.Distance(flipValidator1.position, player.position) < Vector2.Distance(flipValidator2.position, player.position)){
+            if (transform.rotation.y == 180)
+            {
+                transform.Rotate(0f, 0f, 0f);
+            }
+            else 
+            {
+                transform.Rotate(0f, 180f, 0f);
+            }
+       }
         if( Vector2.Distance(transform.position, player.position)> retreatDistance){
            transform.position = this.transform.position;
         }else if(Vector2.Distance(transform.position, player.position)< retreatDistance){
@@ -38,6 +47,7 @@ public class Enemy : MonoBehaviour
         }
 
         if(timeBtwShots <= 0 && Vector2.Distance(transform.position, player.position)< shotingDistance){
+            disparo.Play();
             Instantiate(projectile, puntero.position, Quaternion.identity );
 
             timeBtwShots = startTimeBtwShots;   

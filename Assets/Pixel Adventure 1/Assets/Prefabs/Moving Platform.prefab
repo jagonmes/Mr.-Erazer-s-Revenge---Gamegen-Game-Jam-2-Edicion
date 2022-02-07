@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 865897416140634048}
   - component: {fileID: 865897416140634051}
   - component: {fileID: 865897416140634061}
-  - component: {fileID: 865897416140634060}
+  - component: {fileID: -967183381827424894}
   m_Layer: 6
   m_Name: Moving Platform
   m_TagString: Untagged
@@ -74,9 +74,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1216744043
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7345710839297778315, guid: e242b62e7e6caee439fa1d024a8fa5bb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e664e6d68dd91b14e897f89290fc05fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -135,18 +135,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0031700134, y: -0.028523296}
+  m_Offset: {x: 0.00008177757, y: 0.0023595095}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 0.5}
+    oldSize: {x: 1.2, y: 1.2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.8542137, y: 0.27815193}
+  m_Size: {x: 1.2056737, y: 1.2046368}
   m_EdgeRadius: 0
 --- !u!61 &865897416140634061
 BoxCollider2D:
@@ -161,20 +161,20 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.011123896, y: 0.07702784}
+  m_Offset: {x: 0.0012290478, y: 0.5896828}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 0.5}
+    oldSize: {x: 1.2, y: 1.2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5393062, y: 0.09945521}
+  m_Size: {x: 1.2119479, y: 0.031512737}
   m_EdgeRadius: 0
---- !u!114 &865897416140634060
+--- !u!114 &-967183381827424894
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,6 +183,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 865897416140634054}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ba735c4cd057754dafcb9426d4a949d, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ad62b005e3175c44999f6517c4c1e24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

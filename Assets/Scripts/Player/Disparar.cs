@@ -10,7 +10,8 @@ public class Disparar : MonoBehaviour
     public float startTimeBtwShots;
     [SerializeField] private PlayerMovement pb;
     private float dir0 = 1;
-
+    
+    public AudioSource shotSound;
     public Transform puntero;
     public GameObject projectile;
 
@@ -35,6 +36,7 @@ public class Disparar : MonoBehaviour
     // Update is called once per frame
     void Shot()
     {
+        shotSound.Play();
         Instantiate(projectile, puntero.position, Quaternion.identity );
     }
 

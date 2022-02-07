@@ -15,6 +15,7 @@ public class Boomerang : MonoBehaviour
    private Vector2 moveDirection;
    private Vector2 returnMoveDirection;
 
+
    [SerializeField] private Disparar disparar;
 
     private Transform player;

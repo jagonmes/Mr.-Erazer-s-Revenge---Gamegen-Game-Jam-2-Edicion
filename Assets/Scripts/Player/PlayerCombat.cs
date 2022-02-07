@@ -10,6 +10,7 @@ public class PlayerCombat : MonoBehaviour
     public Transform attackPoint;
     public Rigidbody2D rb;
     public Animator animator;
+    public AudioSource swordSound;
 
     [SerializeField] private PlayerMovement pb;
 
@@ -57,7 +58,10 @@ public class PlayerCombat : MonoBehaviour
 
     void Attack()
     {
+
         animator.SetBool("attacking", true);
+        
+        swordSound.Play();
         
         counter = 60;
         Collider2D [] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemies);
