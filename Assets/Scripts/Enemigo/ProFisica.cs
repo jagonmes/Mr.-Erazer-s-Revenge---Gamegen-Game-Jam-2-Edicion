@@ -18,6 +18,7 @@ public class ProFisica: MonoBehaviour
 
 
    void Start(){
+       rb.transform.Rotate(0,180,0);
        Sc = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLife>();
        rb = GetComponent<Rigidbody2D>();
        player = GameObject.FindGameObjectWithTag("Player").transform;
