@@ -10,6 +10,8 @@ public class BossControllerScript : MonoBehaviour
     public GameObject bossEnemy2;
     public GameObject bossEnemy3;
 
+    [SerializeField] private GameObject[] waypoints;
+
     //Temporizador para volver a realizar una acción
     public float timer = 5;
 

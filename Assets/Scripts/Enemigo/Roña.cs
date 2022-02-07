@@ -3,29 +3,48 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Roña : MonoBehaviour
-{ 
-    private float startContador;
-    private float contador;
+{
+    public float startContador = 3;
+    private float contador = 3;
+    private float timer = 2;
+
+    public float timerTime = 2;
+
+    private bool enabled = false;
 
     public Rigidbody2D rb;
     public Transform projectile;
-    // Start is called before the first frame update
-    void Start()
-    {
-        startContador = 1;
-        contador = startContador;
-    }
 
-    // Update is called once per frame
     void Update()
     {
-        if(contador <= 0 ){
-          if(Random.Range(0f,3f) > 1){
-            Instantiate(projectile, rb.position, Quaternion.identity);
-            contador = startContador;
-          }
-        }else{
-        contador -= Time.deltaTime;
+        if (contador == 0)
+        {
+            enabled = false;
         }
+        if (timer <= 0 && enabled)
+        {
+            Shoot();
+        }
+        else
+        {
+            timer -= Time.deltaTime;
+        }
+    }
+
+    private void Shoot()
+    {
+        timer = timerTime;
+        if ((int)Mathf.Round(Random.Range(0f, 1f)) == 1)
+        {
+            Instantiate(projectile, rb.position, Quaternion.identity);
+        }
+        contador--;
+    }
+
+    public void Enable()
+    {
+        enabled = true;
+        timer = timerTime;
+        contador = startContador;
     }
 }

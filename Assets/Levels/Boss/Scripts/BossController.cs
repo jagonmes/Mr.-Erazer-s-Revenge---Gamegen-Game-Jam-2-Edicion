@@ -9,6 +9,8 @@ public class BossController : MonoBehaviour
     public GameObject bossEnemy2;
     public GameObject bossEnemy3;
 
+    public Roña[] virutas;
+
     //Temporizador para volver a realizar una acción
     public float delayTime = 5;
     private float timer = 5;
@@ -77,6 +79,11 @@ public class BossController : MonoBehaviour
     //Crea al enemigo
     public void SpawnEnemy() 
     {
+        for (int n = 0; n < virutas.Length; n++)
+        {
+            virutas[n].GetComponent<Roña>().Enable();
+        }
+        /*
         int enemy = (int)Mathf.Round(Random.Range(0.5f, 3.5f));
         if (enemy == 1)
         {
@@ -91,6 +98,7 @@ public class BossController : MonoBehaviour
             Instantiate(bossEnemy3, transform.position, Quaternion.identity);
         }
         spawnCounter++;
+        */
     }
 
     //Cambia de fase con la animación correspondiente
