@@ -178,6 +178,7 @@ MonoBehaviour:
   speed: 10
   startTimeBtwShots: 2
   pb: {fileID: 2680928814162982164}
+  animator: {fileID: 2680928814162982167}
   shotSound: {fileID: 2680928814162982160}
   puntero: {fileID: 1649757031546690873}
   projectile: {fileID: 8539875330318667594, guid: e25f2f5a1745c2743a0c0b56748c0b33, type: 3}

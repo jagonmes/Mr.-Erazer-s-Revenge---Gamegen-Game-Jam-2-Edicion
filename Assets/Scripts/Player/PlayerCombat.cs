@@ -57,6 +57,7 @@ public class PlayerCombat : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.K))
         {
+            canAttack = true;
             animator.SetBool("blocking", false);
         }
     }
@@ -83,6 +84,7 @@ public class PlayerCombat : MonoBehaviour
     {
 
         animator.SetBool("blocking", true);
+        canAttack = false;
 
         Collider2D[] blockedEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemies);
         Collider2D[] blockedProjectiles = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, projectiles);

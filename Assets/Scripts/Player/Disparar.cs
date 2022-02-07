@@ -10,6 +10,8 @@ public class Disparar : MonoBehaviour
     public float startTimeBtwShots;
     [SerializeField] private PlayerMovement pb;
     private float dir0 = 1;
+
+    public Animator animator;
     
     public AudioSource shotSound;
     public Transform puntero;
@@ -25,6 +27,7 @@ public class Disparar : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.P) && timeBtwShots <=0)
         {
+            animator.SetBool("throw", true);
             Shot();
             timeBtwShots = startTimeBtwShots;
         }
@@ -40,4 +43,8 @@ public class Disparar : MonoBehaviour
         Instantiate(projectile, puntero.position, Quaternion.identity );
     }
 
+    public void stopThrow()
+    {
+        animator.SetBool("throw", false);
+    }
 }
