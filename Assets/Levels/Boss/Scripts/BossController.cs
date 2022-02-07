@@ -77,7 +77,7 @@ public class BossController : MonoBehaviour
     //Crea al enemigo
     public void SpawnEnemy() 
     {
-        int enemy = (int)Mathf.Round(Random.Range(1, 3));
+        int enemy = (int)Mathf.Round(Random.Range(0.5f, 3.5f));
         if (enemy == 1)
         {
             Instantiate(bossEnemy1, transform.position, Quaternion.identity);
