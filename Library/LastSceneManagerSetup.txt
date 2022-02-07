@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/SinAtacar.unity
+- path: Assets/Scenes/NoSaltar.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
