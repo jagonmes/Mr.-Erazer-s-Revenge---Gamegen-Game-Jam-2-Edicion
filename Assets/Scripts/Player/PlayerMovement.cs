@@ -15,6 +15,9 @@ public class PlayerMovement : MonoBehaviour
     //PRIVATE FLOATS
     public static float dirX;
 
+    private static float contadorStart;
+    private static float contador;
+
     public bool canMove = true;
     public bool canJump = true;
 
@@ -28,10 +31,13 @@ public class PlayerMovement : MonoBehaviour
 
     //AUDIO
     [SerializeField] private AudioSource jumpSoundEffect;
+    [SerializeField] private AudioSource runSoundEffect;
 
     // Start is called before the first frame update
     void Start()
     {
+        contadorStart = 1;
+        contador = contadorStart;
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<BoxCollider2D>();
         anim = GetComponent<Animator>();
@@ -43,6 +49,10 @@ public class PlayerMovement : MonoBehaviour
     {
         CheckInput();
         UpdateAnimation();
+        contador -= 1* Time.deltaTime;
+        if(rb.velocity.x ==0 || !IsGrounded()){
+            runSoundEffect.Stop();
+        }
     }
 
     //CHECK INPUT
@@ -53,6 +63,12 @@ public class PlayerMovement : MonoBehaviour
         if (canMove)
         {
             rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+            if( contador <= 0 && rb.velocity.x !=0){
+                runSoundEffect.Play();
+                contador = contadorStart;
+            }else{
+                contador -= Time.deltaTime;
+            }
         }
 
         //JUMP
@@ -107,10 +123,10 @@ public class PlayerMovement : MonoBehaviour
                 state = MovementState.fallling;
             }
 
-            //Aplica la animación correspondiente
+            //Aplica la animaciï¿½n correspondiente
             anim.SetInteger("state", (int)state);
 
-            //Gira el personaje en la dirección correcta
+            //Gira el personaje en la direcciï¿½n correcta
             FlipSprite();
 
         }
