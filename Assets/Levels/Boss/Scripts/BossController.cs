@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossControllerScript : MonoBehaviour
+public class BossController : MonoBehaviour
 {
-
     //Enemigos a crear
     public GameObject bossEnemy1;
     public GameObject bossEnemy2;
     public GameObject bossEnemy3;
 
     //Temporizador para volver a realizar una acción
-    public float timer = 5;
+    public float delayTime = 5;
+    private float timer = 5;
 
     //Enemigos que ha matado el jugador
     public int enemyCounter = 0;
@@ -63,13 +63,14 @@ public class BossControllerScript : MonoBehaviour
         {
             ChangePhase();
         }
-
+        timer = delayTime;
     }
 
     //Dibuja al enemigo (poner al final de la animación una llamada a SpawnEnemy())
     private void DrawEnemy()
     {
         SetAnimation();
+        SpawnEnemy();
         animationCounter++;
     }
 
