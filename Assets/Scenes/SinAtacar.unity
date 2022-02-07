@@ -398,6 +398,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.1366508
       objectReference: {fileID: 0}
+    - target: {fileID: 2702409755777764671, guid: 69d6b61e3e6991b409d4048728680b99, type: 3}
+      propertyPath: runSoundEffect
+      value: 
+      objectReference: {fileID: 167282436}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69d6b61e3e6991b409d4048728680b99, type: 3}
 --- !u!1 &144275377
@@ -430,6 +434,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &167282436 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2702409755777764667, guid: 69d6b61e3e6991b409d4048728680b99, type: 3}
+  m_PrefabInstance: {fileID: 90059839}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &180430450
 GameObject:
   m_ObjectHideFlags: 0
