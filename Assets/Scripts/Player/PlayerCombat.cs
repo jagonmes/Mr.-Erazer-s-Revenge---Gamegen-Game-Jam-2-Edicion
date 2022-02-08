@@ -78,7 +78,14 @@ public class PlayerCombat : MonoBehaviour
 
         foreach(Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<LapizEmbiste>().movementSpeed = 0;
+            if (enemy.GetComponent<LapizEmbiste>() != null)
+            {
+                enemy.GetComponent<LapizEmbiste>().movementSpeed = 0;
+            }
+            else if (enemy.GetComponent<Enemy1>() != null)
+            {
+                enemy.GetComponent<Enemy1>().movementSpeed = 0;
+            }
             Destroy(enemy.gameObject);
         }
     }
@@ -98,7 +105,14 @@ public class PlayerCombat : MonoBehaviour
         Debug.Log("Defensa");
         foreach(Collider2D enemy in blockedEnemies)
         {
-            enemy.GetComponent<LapizEmbiste>().Blocked();
+            if (enemy.GetComponent<LapizEmbiste>() != null)
+            {
+                enemy.GetComponent<LapizEmbiste>().Blocked();
+            }
+            else 
+            {
+                enemy.GetComponent<Enemy1>().Blocked();
+            }
 
         }
         foreach (Collider2D projectile in blockedProjectiles)
