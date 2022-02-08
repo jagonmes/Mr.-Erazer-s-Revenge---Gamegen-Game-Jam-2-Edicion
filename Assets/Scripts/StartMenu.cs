@@ -12,7 +12,8 @@ public class StartMenu : MonoBehaviour
 
     public void Inicio()
     {
-        SceneManager.LoadScene(1);
+        Debug.Log("Algo");
+        SceneManager.LoadScene(0);
     }
 
     public void Quit()

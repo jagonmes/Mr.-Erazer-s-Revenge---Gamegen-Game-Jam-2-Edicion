@@ -103,15 +103,15 @@ public class BossController : MonoBehaviour
         int enemy = (int)Mathf.Round(Random.Range(0.5f, 3.5f));
         if (enemy == 1)
         {
-            Instantiate(bossEnemy1, transform.position, Quaternion.identity);
+            Instantiate(bossEnemy1, new Vector2(transform.position.x,transform.position.y - 0.75f), Quaternion.identity);
         }
         else if (enemy == 2)
         {
-            Instantiate(bossEnemy2, transform.position, Quaternion.identity);
+            Instantiate(bossEnemy2, new Vector2(transform.position.x, transform.position.y - 0.75f), Quaternion.identity);
         }
         else 
         {
-            Instantiate(bossEnemy3, transform.position, Quaternion.identity);
+            Instantiate(bossEnemy3, new Vector2(transform.position.x, transform.position.y - 0.75f), Quaternion.identity);
         }
         spawnCounter++;
     }
@@ -132,7 +132,7 @@ public class BossController : MonoBehaviour
     {
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.velocity = new Vector2(0, 4.0f);
-        //Invoke("EndLevel", 3f);
+        Invoke("EndLevel", 3f);
     }
 
     public void EndLevel()

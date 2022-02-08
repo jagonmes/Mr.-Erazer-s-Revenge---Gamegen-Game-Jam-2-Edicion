@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 356591825220145751}
   - component: {fileID: 4102053039410339432}
   - component: {fileID: 556264614627021101}
+  - component: {fileID: 8725128059540139102}
   m_Layer: 0
   m_Name: "ProRo\xF1aTest"
   m_TagString: Untagged
@@ -74,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: -1216744043
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 0.6226415, g: 0.15566038, b: 0.15566038, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 0bd08c31ec21dcb47b11d277aa8e6cc4, type: 3}
+  m_Color: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -137,3 +138,16 @@ MonoBehaviour:
   speed: 3
   tiempoBala: 10
   rb: {fileID: 4102053039410339432}
+--- !u!114 &8725128059540139102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8565051406685124014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a10fb0142b8a2d49ab502c7627fc96c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.2
