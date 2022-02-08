@@ -536,8 +536,8 @@ MonoBehaviour:
   canAttack: 1
   canBlock: 1
   blocking: 0
-  defensePoint1: {x: 0, y: 0}
   defensePoint2: {x: 0, y: 0}
+  defensePoint1: {fileID: 5109887449035793907}
   attackPoint: {fileID: 7125500844963510621}
   rb: {fileID: 2680928814162982152}
   animator: {fileID: 2680928814162982167}
