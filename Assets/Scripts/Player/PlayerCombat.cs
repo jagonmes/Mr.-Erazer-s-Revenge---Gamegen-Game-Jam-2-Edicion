@@ -6,7 +6,8 @@ public class PlayerCombat : MonoBehaviour
 {
     public bool canAttack;
     public bool canBlock;
-    
+    public bool blocking = false;
+
     public Transform attackPoint;
     public Rigidbody2D rb;
     public Animator animator;
@@ -54,14 +55,22 @@ public class PlayerCombat : MonoBehaviour
             if (canBlock)
             {
                 Block();
+                blocking = true;
             }
         }
         if (Input.GetKeyUp(KeyCode.K))
         {
-            disparar.canShoot = true;
-            pb.canMove = true;
-            canAttack = true;
-            animator.SetBool("blocking", false);
+            if (blocking) 
+            {
+                Debug.Log("entra");
+                pb.canMove = true;
+                canAttack = true;
+                animator.SetBool("blocking", false);
+                if (disparar != null)
+                {
+                    disparar.canShoot = true;
+                }
+            }
         }
     }
 
@@ -96,7 +105,10 @@ public class PlayerCombat : MonoBehaviour
         animator.SetBool("blocking", true);
         canAttack = false;
         pb.canMove = false;
-        disparar.canShoot = false;
+        if (disparar != null)
+        {
+            disparar.canShoot = false;
+        }
 
         rb.velocity = new Vector2(0, rb.velocity.y);
 

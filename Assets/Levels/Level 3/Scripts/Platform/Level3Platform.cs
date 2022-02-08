@@ -45,7 +45,7 @@ public class Level3Platform : MonoBehaviour
                     currentWaypointIndex = 0;
                 }
             }
-            
+            pm.canMove = false;
             transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, Time.deltaTime * speed);
         }
     }
