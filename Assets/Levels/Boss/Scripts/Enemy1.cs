@@ -12,6 +12,8 @@ public class Enemy1 : MonoBehaviour
     public int steps = 0;
     public bool stunned = false;
 
+    public BossController bc;
+
     private int counter;
     public int dirX = 1;
 
@@ -36,7 +38,7 @@ public class Enemy1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (rb.position.x < 3.0f) 
+        if (rb.position.x < 0.5f) 
         {
             rb.bodyType = RigidbodyType2D.Dynamic;
         }
@@ -122,5 +124,11 @@ public class Enemy1 : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawLine(vision1, vision2);
+    }
+
+    void OnDestroy()
+    {
+        Debug.Log("Corredor Muerto");
+        bc.enemyCounter++;
     }
 }

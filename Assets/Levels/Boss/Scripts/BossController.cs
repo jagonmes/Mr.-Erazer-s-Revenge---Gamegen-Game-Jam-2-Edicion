@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossController : MonoBehaviour
 {
@@ -8,6 +9,10 @@ public class BossController : MonoBehaviour
     public GameObject bossEnemy1;
     public GameObject bossEnemy2;
     public GameObject bossEnemy3;
+
+    public Rigidbody2D rb;
+
+    public Animator animator;
 
     public Roña[] virutas;
 
@@ -22,7 +27,7 @@ public class BossController : MonoBehaviour
     private int spawnCounter = 0;
 
     //Fase actual del Jefe
-    private int phaseCounter = 1;
+    private int phaseCounter = 0;
 
     //Trigger para terminar el nivel
     private bool end = false;
@@ -33,6 +38,11 @@ public class BossController : MonoBehaviour
     //Numero total de animaciones
     private int animationNumber;
 
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
     void Update()
     {
         timer = timer - Time.deltaTime;
@@ -40,50 +50,56 @@ public class BossController : MonoBehaviour
         {
             CallBoss();
         }
-        else 
-        {
-            EndBoss();
-        }
     }
 
-    private void CallBoss() 
+    private void CallBoss()
     {
         //Activar Final del Boss
-        if (phaseCounter == 3 && enemyCounter == 9)
+        if (phaseCounter == 3 && spawnCounter == 9)
         {
             end = true;
         }
-        
-        //Sacar enemigo
-        if (spawnCounter < phaseCounter * 3)  
+
+        if (!end)
         {
-            DrawEnemy();
+
+            //Cambio de fase
+            if (phaseCounter <= 2 && spawnCounter == (phaseCounter + 1) * 3)
+            {
+                ChangePhase();
+            }
+            //Sacar enemigo
+            else if (spawnCounter < (phaseCounter + 1) * 3)
+            {
+                DrawEnemy();
+            }
+            if (phaseCounter != 3)
+            {
+                timer = delayTime;
+            }
+            else
+            {
+                timer = 9;
+            }
+        }
+        else
+        {
+            EndBoss();
         }
 
-        //Cambio de fase
-        if (phaseCounter < 3 && spawnCounter == phaseCounter * 3 && spawnCounter == 9) 
-        {
-            ChangePhase();
-        }
-        timer = delayTime;
     }
 
     //Dibuja al enemigo (poner al final de la animación una llamada a SpawnEnemy())
     private void DrawEnemy()
     {
+        animationCounter++;
         SetAnimation();
         SpawnEnemy();
-        animationCounter++;
     }
 
     //Crea al enemigo
-    public void SpawnEnemy() 
+    public void SpawnEnemy()
     {
-        for (int n = 0; n < virutas.Length; n++)
-        {
-            virutas[n].GetComponent<Roña>().Enable();
-        }
-        /*
         int enemy = (int)Mathf.Round(Random.Range(0.5f, 3.5f));
         if (enemy == 1)
         {
@@ -98,7 +114,6 @@ public class BossController : MonoBehaviour
             Instantiate(bossEnemy3, transform.position, Quaternion.identity);
         }
         spawnCounter++;
-        */
     }
 
     //Cambia de fase con la animación correspondiente
@@ -106,31 +121,28 @@ public class BossController : MonoBehaviour
     {
         phaseCounter++;
         SetAnimation();
-        animationCounter++;
-    }
-
-    //Da pie a la animación final del Boss (poner al finalo de la animación una llamada a EndLevel())
-    private void EndBoss() 
-    {
-        SetAnimation();
-    }
-
-    public void EndLevel() 
-    {
-        //Poner codigo de final de nivel (salto del Jefe al vacio, musiquita, y cambio de escena a los creditos)
-    }
-
-    private void SetAnimation() 
-    {
-        /*
-        if (animationCounter < animationNumber) 
+        for (int n = 0; n < virutas.Length; n++)
         {
-            anim.SetInteger("state", animationCounter);
-            if (end) 
-            {
-                animationCounter = animationNumber;
-            }
+            virutas[n].GetComponent<Roña>().Enable();
         }
-        */
+    }
+
+    //Da pie a la animación final del Boss
+    private void EndBoss()
+    {
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        rb.velocity = new Vector2(0, 4.0f);
+        //Invoke("EndLevel", 3f);
+    }
+
+    public void EndLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    private void SetAnimation()
+    {
+        animator.SetInteger("animCounter", animationCounter);
+        animator.SetInteger("phaseCounter", phaseCounter);
     }
 }

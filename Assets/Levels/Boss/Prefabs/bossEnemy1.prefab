@@ -120,7 +120,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5195023250155291607}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 39cfbfa781d5aca4f936eed96e6d039e, type: 2}
   m_CullingMode: 0
@@ -149,6 +149,7 @@ MonoBehaviour:
   maxSteps: 100
   steps: 0
   stunned: 0
+  bc: {fileID: 8452708030839879003, guid: d2799186d9ef8b74795b35181c90d461, type: 3}
   dirX: 1
   rb: {fileID: 5195023250155291609}
   transform: {fileID: 5195023250155291610}

@@ -179,7 +179,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8577900612618864256}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: b7f267496a8d2f949819edbeb13af6a8, type: 2}
   m_CullingMode: 0
@@ -302,6 +302,7 @@ MonoBehaviour:
   retreatDistance: 4
   shotingDistance: 15
   detectionDistance: 20
+  bc: {fileID: 8452708030839879003, guid: d2799186d9ef8b74795b35181c90d461, type: 3}
   startTimeBtwShots: 2
   p: 0
   player: {fileID: 167305170403478859, guid: a8628d85e27d5c341b4303467782b55e, type: 3}

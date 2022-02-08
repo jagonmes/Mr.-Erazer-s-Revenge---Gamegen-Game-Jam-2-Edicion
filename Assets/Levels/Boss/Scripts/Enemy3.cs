@@ -9,6 +9,8 @@ public class Enemy3 : MonoBehaviour
     public float shotingDistance;
     public float detectionDistance;
 
+    public BossController bc;
+
     private float timeBtwShots;
     public float startTimeBtwShots;
 
@@ -38,8 +40,8 @@ public class Enemy3 : MonoBehaviour
         p = Vector2.Distance(transform.position, player.position);
         if (!set) 
         {
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2(2.5f , transform.position.y), speed * Time.deltaTime);
-            if (rb.position.x < 3.0f)
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(0f , transform.position.y), speed * Time.deltaTime);
+            if (rb.position.x < 0.5f)
             {
                 rb.bodyType = RigidbodyType2D.Dynamic;
                 set = true;
@@ -87,5 +89,11 @@ public class Enemy3 : MonoBehaviour
             }
         }
        
+    }
+
+    void OnDestroy()
+    {
+        Debug.Log("Arquero Muerto");
+        bc.enemyCounter++;
     }
 }
