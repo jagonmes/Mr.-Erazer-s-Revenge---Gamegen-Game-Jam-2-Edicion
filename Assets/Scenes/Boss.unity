@@ -371,6 +371,10 @@ PrefabInstance:
       propertyPath: disparar
       value: 
       objectReference: {fileID: 961591477}
+    - target: {fileID: 2541649408616310663, guid: 0ba1cd25a6da3c4439d879dad5da5e6d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2680928814162982153, guid: 0ba1cd25a6da3c4439d879dad5da5e6d, type: 3}
       propertyPath: m_Name
       value: Player
