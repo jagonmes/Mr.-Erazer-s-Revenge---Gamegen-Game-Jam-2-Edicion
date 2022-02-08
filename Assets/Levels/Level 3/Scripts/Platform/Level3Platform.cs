@@ -17,7 +17,7 @@ public class Level3Platform : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") && end)
         {
             collision.gameObject.transform.SetParent(null);
-            pm.CanMoveToggle();
+            pm.canMove2 = true;
         }
     }
 
@@ -27,7 +27,6 @@ public class Level3Platform : MonoBehaviour
         {
             collision.gameObject.transform.SetParent(transform);
             start = true;
-            pm.CanMoveToggle();
         }
     }
 
@@ -45,7 +44,6 @@ public class Level3Platform : MonoBehaviour
                     currentWaypointIndex = 0;
                 }
             }
-            pm.canMove = false;
             transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, Time.deltaTime * speed);
         }
     }

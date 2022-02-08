@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private static float contadorStart;
     private static float contador;
 
+    public bool canMove2 = true;
     public bool canMove = true;
     public bool canJump = true;
 
@@ -60,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //X AXIS DIRECTION AND RUNNING ANIMATION
         dirX = Input.GetAxisRaw("Horizontal");
-        if (canMove)
+        if (canMove && canMove2)
         {
             rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
             if( contador <= 0 && rb.velocity.x !=0){
@@ -100,11 +101,11 @@ public class PlayerMovement : MonoBehaviour
         {
 
             //Comprueba si esta corriendo
-            if (dirX > 0 && canMove)
+            if (dirX > 0 && canMove && canMove2)
             {
                 state = MovementState.running;
             }
-            else if (dirX < 0 && canMove)
+            else if (dirX < 0 && canMove && canMove2)
             {
                 state = MovementState.running;
             }

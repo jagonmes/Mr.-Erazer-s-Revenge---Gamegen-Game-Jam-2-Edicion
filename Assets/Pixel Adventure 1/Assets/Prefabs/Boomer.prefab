@@ -101,7 +101,7 @@ MonoBehaviour:
   speed: 15
   tiempoBala: 5
   rb: {fileID: 3647587875467226643}
-  contador: 80
+  contador: 10
   tiempoVolver: 2
   disparar: {fileID: 2570926611297638330, guid: 0ba1cd25a6da3c4439d879dad5da5e6d, type: 3}
 --- !u!50 &3647587875467226643
