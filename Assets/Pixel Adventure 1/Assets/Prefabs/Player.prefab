@@ -42,6 +42,7 @@ Transform:
   - {fileID: 1649757031546690873}
   - {fileID: 7125500844963510621}
   - {fileID: 5109887449035793907}
+  - {fileID: 8905432429045561174}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -536,7 +537,7 @@ MonoBehaviour:
   canAttack: 1
   canBlock: 1
   blocking: 0
-  defensePoint2: {x: 0, y: 0}
+  defensePoint2: {fileID: 8905432429045561174}
   defensePoint1: {fileID: 5109887449035793907}
   attackPoint: {fileID: 7125500844963510621}
   rb: {fileID: 2680928814162982152}
@@ -643,4 +644,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2680928814162982154}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8700825945937051021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8905432429045561174}
+  m_Layer: 7
+  m_Name: DefensePoint2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8905432429045561174
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8700825945937051021}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2680928814162982154}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

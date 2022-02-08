@@ -27,7 +27,7 @@ public class Disparar : MonoBehaviour
            dir0 = pb.GetDirX();
            puntero.transform.position = new Vector2(this.transform.position.x + dir0*2, this.transform.position.y);
         }
-        if (Input.GetKeyDown(KeyCode.P) && timeBtwShots <=0 && canShoot)
+        if (Input.GetKeyDown(KeyCode.L) && timeBtwShots <=0 && canShoot)
         {
             animator.SetTrigger("throw");
             Shot();

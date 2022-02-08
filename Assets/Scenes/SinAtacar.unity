@@ -349,8 +349,12 @@ PrefabInstance:
       value: 0.57
       objectReference: {fileID: 0}
     - target: {fileID: -6572762050500792373, guid: 69d6b61e3e6991b409d4048728680b99, type: 3}
+      propertyPath: Priority
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: -6572762050500792373, guid: 69d6b61e3e6991b409d4048728680b99, type: 3}
       propertyPath: m_Volume
-      value: 0.009
+      value: 0.059
       objectReference: {fileID: 0}
     - target: {fileID: 2529252734165233553, guid: 69d6b61e3e6991b409d4048728680b99, type: 3}
       propertyPath: m_Enabled

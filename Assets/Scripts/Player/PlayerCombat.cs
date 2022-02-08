@@ -8,8 +8,8 @@ public class PlayerCombat : MonoBehaviour
     public bool canBlock;
     public bool blocking = false;
 
-    public Vector2 defensePoint2;
 
+    public Transform defensePoint2;
     public Transform defensePoint1;
     public Transform attackPoint;
     public Rigidbody2D rb;
@@ -33,10 +33,12 @@ public class PlayerCombat : MonoBehaviour
         if (pb.GetDirX() != 0)
         {
             dir0 = pb.GetDirX();
-            attackPoint.transform.position = new Vector2(this.transform.position.x + dir0, this.transform.position.y);
-            defensePoint1.transform.position = new Vector2 (this.transform.position.x + dir0*0.5f, this.transform.position.y-1.2f);
-            defensePoint2 = new Vector2(this.transform.position.x + 0.7f*dir0, this.transform.position.y+0.8f);
         }
+
+        attackPoint.transform.position = new Vector2(this.transform.position.x + dir0, this.transform.position.y);
+        defensePoint1.transform.position = new Vector2 (this.transform.position.x + 0.1f*dir0, this.transform.position.y-1.2f);
+        defensePoint2.transform.position = new Vector2(this.transform.position.x + 0.7f*dir0, this.transform.position.y+0.9f);
+
         if (counter <= 0)
         {
             if (Input.GetKeyDown(KeyCode.J))
@@ -118,8 +120,8 @@ public class PlayerCombat : MonoBehaviour
 
         rb.velocity = new Vector2(0, rb.velocity.y);
 
-        Collider2D[] blockedEnemies = Physics2D.OverlapAreaAll(defensePoint1.position, defensePoint2, enemies);
-        Collider2D[] blockedProjectiles = Physics2D.OverlapAreaAll(defensePoint1.position, defensePoint2, projectiles);
+        Collider2D[] blockedEnemies = Physics2D.OverlapAreaAll(defensePoint1.position, defensePoint2.position, enemies);
+        Collider2D[] blockedProjectiles = Physics2D.OverlapAreaAll(defensePoint1.position, defensePoint2.position, projectiles);
         Debug.Log("Defensa");
         foreach(Collider2D enemy in blockedEnemies)
         {
@@ -139,10 +141,10 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
-    void OnDrawGizmosSelected()
+    void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-        Gizmos.DrawLine(defensePoint1.position, defensePoint2);
+        Gizmos.DrawLine(defensePoint1.position, defensePoint2.position);
     }
 
     public void StopAttack()
